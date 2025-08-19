@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Audit gratuit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{ --blue:#2563eb; --line:#1f2a44; --bg:#0b1220; --text:#e5e7eb; --muted:#9aa3b2 }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    a{color:#9cc0ff;text-decoration:none}
+    .container{max-width:920px;margin:0 auto;padding:0 24px}
+    .nav{position:sticky;top:0;background:rgba(11,18,32,.6);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
+    .nav-in{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+    .brand{display:flex;gap:10px;align-items:center}
+    .brand img{height:36px}
+    .card{background:linear-gradient(180deg,#0f172a 0%, #0b1220 100%);border:1px solid #1f2a44;border-radius:16px;padding:22px;margin:40px 0}
+    form{max-width:720px;margin:0 auto}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #22345d;background:#0b1327;color:#dbeafe;border-radius:12px;margin-top:8px}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:#3b82f6;box-shadow:0 0 0 4px rgba(59,130,246,.15)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .btn{display:inline-block;background:linear-gradient(135deg,#0b59ff,#1d4ed8);color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;border:0}
+    .btn.secondary{background:transparent;color:#9cc0ff;border:1px solid #2a3b66}
+    footer{border-top:1px solid var(--line);padding:22px 0;color:#95a2be;text-align:center}
+    @media (max-width:920px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-in">
+      <div class="brand">
+        <img src="assets/img/logo-aurum.png" alt="Aurum Agency" onerror="this.style.display='none'">
+        <div class="logo-text">Aurum <span style="color:#9cc0ff">Agency</span></div>
+      </div>
+      <div><a href="index.html" class="btn secondary">← Retour</a></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h1 style="margin-top:0">Recevoir mon audit gratuit</h1>
+      <p style="color:#9aa3b2">Remplissez ce formulaire. Réponse sous 24h. Sans engagement.</p>
+      <form action="https://formspree.io/f/myzpqgay" method="POST">
+        <div class="row">
+          <input name="name" placeholder="Votre prénom" required>
+          <input name="email" type="email" placeholder="Votre email" required>
+        </div>
+        <input name="handle" placeholder="Compte Insta/TikTok (@…)">
+        <div class="row">
+          <select name="offer">
+            <option>Growth (600€/mois + 20%)</option>
+            <option>Starter (300€/mois)</option>
+            <option>Premium (1000€/mois + 40%)</option>
+          </select>
+          <input name="goal" placeholder="Objectif de revenu / mois (€)">
+        </div>
+        <textarea name="message" rows="4" placeholder="Parlez-nous de vous…"></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <input type="hidden" name="_redirect" value="merci.html">
+        <input type="hidden" name="_subject" value="Nouveau lead — Audit Aurum Agency">
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+          <button class="btn" type="submit">Envoyer ma demande</button>
+          <small style="color:#9aa3b2">ou écrivez: <a href="mailto:contact@aurum.agency">contact@aurum.agency</a></small>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>© <span id="year"></span> Aurum Agency — Pro • Transparent • Axé revenus</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
